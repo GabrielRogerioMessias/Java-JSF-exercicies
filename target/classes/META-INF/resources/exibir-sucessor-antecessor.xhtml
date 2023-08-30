@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>Sucessor Antecessor</title>
+</h:head>
+<h:form>
+<p:panel header="Sucessor e antecessor"/>
+<h:panelGrid columns="1">
+    <p:outputLabel value="Digite um número qualquer"/>
+    <p:inputText value="#{antecessorSucessorController.number}"/>
+
+    <p:outputLabel  value="Antecessor:"/>
+    <p:inputText id="ant" readonly="true" value="#{antecessorSucessorController.antecessor}"/>
+    <p:outputLabel value="Sucessor:"/>
+    <p:inputText id="suc" readonly="true" value="#{antecessorSucessorController.sucessor}"/>
+    <p:commandButton value="Mostrar" actionListener="#{antecessorSucessorController.calcularSucessorAnt()}" update="ant,suc" />
+</h:panelGrid>
+
+</h:form>
+<h:body>
+
+</h:body>
+
+</html>
