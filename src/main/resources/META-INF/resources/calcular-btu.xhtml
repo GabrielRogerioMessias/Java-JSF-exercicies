@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-us"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>CalcularBTU</title>
+</h:head>
+
+<h:form>
+    <p:panel header="Calcular BTU"/>
+    <h:panelGrid>
+        <p:outputLabel value="Digite a área do seu cômodo:"/>
+        <p:inputText value="#{calcularBTUController.areaComodo}"/>
+        <p:outputLabel value="Digite o número de fontes de calor:"/>
+        <p:inputText value="#{calcularBTUController.fontesCalor}"/>
+        <p:outputLabel value="A quantidade necessária de BTUS será de:"/>
+        <p:inputText id="result" readonly="true" value="#{calcularBTUController.totBTU}"/>
+
+    </h:panelGrid>
+    <h:panelGrid>
+        <p:commandButton value="Calcular" actionListener="#{calcularBTUController.calcularBTU()}" update="result"/>
+    </h:panelGrid>
+</h:form>
+
+<body>
+
+</body>
+</html>
